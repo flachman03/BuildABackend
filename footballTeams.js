@@ -1,7 +1,7 @@
 const footballTeams = {
   Cowboys: {
     name: 'Cowboys',
-    orgin: 'Dallas',
+    origin: 'Dallas',
     established: 1960
   },
   Patriots: {
@@ -65,8 +65,8 @@ const footballTeams = {
     established: 1970
   },
   Cardinals: {
-    name: Cardinals,
-    origin: Arizona,
+    name: 'Cardinals',
+    origin: 'Arizona',
     established: 1920
   },
   Saints: {
@@ -161,4 +161,4 @@ const footballTeams = {
   }
 }
 
-export default footballTeams
+module.exports = footballTeams;
