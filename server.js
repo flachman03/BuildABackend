@@ -6,7 +6,7 @@ const database = require('knex')(configuration)
 
 app.set('port', process.env.PORT || 3000);
 
-app.get('/', (req, res) => {
+app.get('/api/v1/teams', (req, res) => {
   database('football_teams').select()
     .then( teams => {
       res.status(200).json(teams)
@@ -14,6 +14,13 @@ app.get('/', (req, res) => {
     .catch( error => {
       res.status(500).json( { error })
     })
+})
+
+app.get('api/v1/teams/:id', (req, res) => {
+  database('football_teams')
+    .where({id: req.params.id})
+    .then()
+
 })
 
 app.listen(app.get('port'), () => {
