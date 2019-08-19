@@ -60,6 +60,17 @@ app.get('/api/v1/quarterbacks/:id', (req, res) => {
       res.status(404).json(error)
     })
 })
+
+app.delete('/api/v1/teams/:id', (req, res) => {
+  database('football_teams').select()
+    .where({id: req.params.id})
+    .then( team => {
+      res.status(204).json(team)
+    })
+    .catch( error => {
+      res.status(422).json(error)
+    })
+})
 app.listen(app.get('port'), () => {
   console.log(`app is running on port on ${app.get('port')}`)
 })
